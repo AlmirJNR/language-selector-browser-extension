@@ -8,10 +8,19 @@
     "48": "icon.svg",
     "96": "icon.svg"
   },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "almirafjr@github.com"
+    }
+  },
   "content_scripts": [
     {
-      "matches": ["*://learn.microsoft.com/*"],
-      "js": ["redirect.js"]
+      "matches": [
+        "*://learn.microsoft.com/*"
+      ],
+      "js": [
+        "redirect.js"
+      ]
     }
   ],
   "permissions": [
