@@ -18,9 +18,9 @@ browser.runtime.onInstalled.addListener(async () => {
 });
 
 browser.contextMenus.onClicked.addListener(async (info, tab) => {
-    let firstSplit = tab.url.split('learn.microsoft.com');
-    let secondSplit = firstSplit[1].split('/');
+    let firstSplit = tab.url.split("learn.microsoft.com");
+    let secondSplit = firstSplit[1].split("/");
     secondSplit[1] = info.menuItemId;
-    let modifiedSecondSplit = secondSplit.join('/');
-    await browser.tabs.update(tab.id, {url: [firstSplit[0], "learn.microsoft.com", modifiedSecondSplit].join("")});
+    let modifiedSecondSplit = secondSplit.join("/");
+    await browser.tabs.update(tab.id, {url: `${firstSplit[0]}learn.microsoft.com${modifiedSecondSplit}`});
 });
