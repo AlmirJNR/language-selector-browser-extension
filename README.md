@@ -1,7 +1,7 @@
 # Build
 
-1. Install [web-ext](https://github.com/mozilla/web-ext)
-2. Run `web-ext build --overwrite-dest`
+1. Run `npm i`
+2. Run `npm run build`
 
 # Installation
 
