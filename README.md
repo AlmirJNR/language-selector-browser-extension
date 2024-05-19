@@ -14,3 +14,9 @@
 7. Click on the `Gear` icon
 8. Click on `Install Add-on From File...`
 9. Select the `.zip` file located in the folder [web-ext-artifacts](/web-ext-artifacts)
+
+# Usage
+
+1. Open Firefox
+2. Go to [learn microsoft](https://learn.microsoft.com/en-us/)
+3. The extension should suggest the language change, accept it and it should change
