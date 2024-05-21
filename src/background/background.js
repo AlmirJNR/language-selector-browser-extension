@@ -6,14 +6,14 @@ browser.runtime.onInstalled.addListener(async () => {
         id: constants.ENGLISH_CONTEXT_MENU_ID,
         title: "English",
         contexts: ["all"],
-        documentUrlPatterns: ["*://learn.microsoft.com/*"],
+        documentUrlPatterns: [constants.LEARN_MICROSOFT_URL_PATTERN],
         type: "radio"
     });
     browser.contextMenus.create({
         id: constants.PORTUGUESE_CONTEXT_MENU_ID,
         title: "Português",
         contexts: ["all"],
-        documentUrlPatterns: ["*://learn.microsoft.com/*"],
+        documentUrlPatterns: [constants.LEARN_MICROSOFT_URL_PATTERN],
         type: "radio"
     });
 
