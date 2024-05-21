@@ -5,7 +5,7 @@
 
 # Development
 
-1. Run `npm run start`
+1. Run `npm run dev`
 
 # Installation
 
@@ -22,4 +22,6 @@
 
 1. Open Firefox
 2. Go to [learn microsoft](https://learn.microsoft.com/en-us/)
-3. The extension should suggest the language change, accept it and it should change
+3. There are two usage options:
+    - Right-click on the page, and you should see the option to change your language
+    - Click on the extension icon, and you should see the option to change your language
