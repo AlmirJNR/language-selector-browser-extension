@@ -1,4 +1,4 @@
-import {replaceUrlLanguagePath} from "./shared.mjs";
+import {replaceUrlLanguagePath} from "../libs/urlHelper.mjs";
 
 const buttons = document.getElementsByTagName("button");
 for (const button of buttons) {

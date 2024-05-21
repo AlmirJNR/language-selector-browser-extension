@@ -1,4 +1,4 @@
-import {replaceUrlLanguagePath} from "./shared.mjs";
+import {replaceUrlLanguagePath} from "../libs/urlHelper.mjs";
 
 browser.runtime.onInstalled.addListener(async () => {
     browser.contextMenus.create({

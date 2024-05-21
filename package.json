@@ -4,6 +4,7 @@
     "web-ext": "^7.11.0"
   },
   "scripts": {
-    "build": "web-ext build --overwrite-dest"
+    "build": "web-ext build --overwrite-dest",
+    "dev": "web-ext run --devtools --reload --start-url https://learn.microsoft.com"
   }
 }

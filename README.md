@@ -3,6 +3,10 @@
 1. Run `npm i`
 2. Run `npm run build`
 
+# Development
+
+1. Run `npm run start`
+
 # Installation
 
 1. Open Firefox

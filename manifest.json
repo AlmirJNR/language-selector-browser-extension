@@ -1,12 +1,12 @@
 {
   "manifest_version": 2,
   "name": "Microsoft Learn Language Selector",
-  "version": "0.3",
+  "version": "0.4",
   "description": "Change your preferred language in microsoft learn easily",
   "homepage_url": "https://github.com/almirjnr/learn-microsoft-language-browser-extension",
   "icons": {
-    "48": "icon.svg",
-    "96": "icon.svg"
+    "48": "src/icons/icon.svg",
+    "96": "src/icons/icon.svg"
   },
   "browser_specific_settings": {
     "gecko": {
@@ -15,7 +15,7 @@
   },
   "background": {
     "scripts": [
-      "background.js"
+      "src/background/background.js"
     ],
     "persistent": true,
     "type": "module"
@@ -26,10 +26,10 @@
     "tabs"
   ],
   "browser_action": {
-    "default_icon": "icon.svg",
-    "default_popup": "popup.html"
+    "default_icon": "src/icons/icon.svg",
+    "default_popup": "src/popup/popup.html"
   },
   "web_accessible_resources": [
-    "./shared.mjs"
+    "src/libs/urlHelper.mjs"
   ]
 }
