@@ -1,25 +1,26 @@
-import {replaceUrlLanguagePath} from "../libs/urlHelper.mjs";
+import {changeTabLanguage} from "../libs/urlHelper.mjs";
+import * as constants from "../libs/constants.mjs";
 
 browser.runtime.onInstalled.addListener(async () => {
     browser.contextMenus.create({
-        id: "en-us",
+        id: constants.ENGLISH_CONTEXT_MENU_ID,
         title: "English",
         contexts: ["all"],
         documentUrlPatterns: ["*://learn.microsoft.com/*"],
         type: "radio"
     });
     browser.contextMenus.create({
-        id: "pt-br",
+        id: constants.PORTUGUESE_CONTEXT_MENU_ID,
         title: "Português",
         contexts: ["all"],
         documentUrlPatterns: ["*://learn.microsoft.com/*"],
         type: "radio"
     });
 
-    await browser.contextMenus.update(navigator.language.toLowerCase(), {checked: true});
+    if (constants.CONTEXT_MENU_IDS.includes(constants.NAVIGATOR_LANGUAGE))
+        await browser.contextMenus.update(constants.NAVIGATOR_LANGUAGE, {checked: true});
 });
 
 browser.contextMenus.onClicked.addListener(async (info, tab) => {
-    const urlWithPreferredLanguage = replaceUrlLanguagePath(tab.url, info.menuItemId);
-    await browser.tabs.update(tab.id, {url: urlWithPreferredLanguage});
+    await changeTabLanguage(tab, info.menuItemId);
 });
