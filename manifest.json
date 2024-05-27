@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Microsoft Learn Language Selector",
-  "version": "0.4",
+  "version": "0.5",
   "description": "Change your preferred language in microsoft learn easily",
   "homepage_url": "https://github.com/almirjnr/learn-microsoft-language-browser-extension",
   "icons": {
@@ -30,6 +30,7 @@
     "default_popup": "src/popup/popup.html"
   },
   "web_accessible_resources": [
-    "src/libs/urlHelper.mjs"
+    "src/libs/urlHelper.mjs",
+    "src/icons/icon.svg"
   ]
 }
