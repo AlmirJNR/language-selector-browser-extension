@@ -6,11 +6,13 @@
     "languages": [
       {
         "name": "Português",
-        "path": "pt-br"
+        "path": "pt-br",
+        "locale": ["pt", "por"]
       },
       {
         "name": "English",
-        "path": "en-us"
+        "path": "en-us",
+        "locale": ["en", "eng"]
       }
     ]
   },
@@ -21,10 +23,12 @@
     "languages": [
       {
         "name": "Português",
-        "path": "portuguese"
+        "path": "portuguese",
+        "locale": ["pt", "por"]
       },
       {
-        "name": "English"
+        "name": "English",
+        "locale": ["en", "eng"]
       }
     ]
   }
