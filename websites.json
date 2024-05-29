@@ -30,6 +30,11 @@
       {
         "name": "English",
         "locale": ["en", "eng"]
+      },
+      {
+        "name": "Español",
+        "path": "espanol",
+        "locale": ["es", "spa"]
       }
     ]
   }
