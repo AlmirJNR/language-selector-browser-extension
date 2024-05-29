@@ -1,0 +1,31 @@
+[
+  {
+    "id": "learn-microsoft",
+    "documentUrlPatterns": ["*://learn.microsoft.com/*"],
+    "replaceInPathAt": 0,
+    "languages": [
+      {
+        "name": "Português",
+        "path": "pt-br"
+      },
+      {
+        "name": "English",
+        "path": "en-us"
+      }
+    ]
+  },
+  {
+    "id": "free-code-camp",
+    "documentUrlPatterns": ["*://www.freecodecamp.org/*"],
+    "replaceInPathAt": 0,
+    "languages": [
+      {
+        "name": "Português",
+        "path": "portuguese"
+      },
+      {
+        "name": "English"
+      }
+    ]
+  }
+]

@@ -1,7 +1,11 @@
-import {changeTabLanguage} from "../libs/urlHelper.mjs";
-import * as constants from "../libs/constants.mjs";
+import {changeTabLanguage} from "../libs/urlHelper.js";
+import * as constants from "../libs/constants.js";
 
 browser.runtime.onInstalled.addListener(async () => {
+    // browser.runtime.onStartup.addListener(() => {
+    // TODO: Add logic to re-fetch data from static json
+    // });
+
     browser.contextMenus.create({
         id: constants.ENGLISH_CONTEXT_MENU_ID,
         title: "English",
@@ -22,5 +26,8 @@ browser.runtime.onInstalled.addListener(async () => {
 });
 
 browser.contextMenus.onClicked.addListener(async (info, tab) => {
+    if (tab === undefined)
+        throw new Error("Invalid tab");
+
     await changeTabLanguage(tab, info.menuItemId);
 });

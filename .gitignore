@@ -1,4 +1,6 @@
 web-ext-artifacts/*
+*.js
+*.mjs
 
 .idea/**/workspace.xml
 .idea/**/tasks.xml
