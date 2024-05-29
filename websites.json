@@ -20,6 +20,7 @@
     "id": "free-code-camp",
     "documentUrlPatterns": ["*://www.freecodecamp.org/*"],
     "replaceInPathAt": 0,
+    "insertInPathAt": 0,
     "languages": [
       {
         "name": "Português",
