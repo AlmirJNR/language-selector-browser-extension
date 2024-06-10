@@ -1,3 +1,8 @@
+<div align="center">
+    <img height="250px" width="250px" src="./src/icons/icon.png" alt="logo">
+    <h2>Language Selector</h2>
+</div>
+
 # Build
 
 1. Run `npm i`
