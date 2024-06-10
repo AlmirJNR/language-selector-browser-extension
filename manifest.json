@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Language Selector",
-  "version": "0.6",
+  "version": "0.7",
   "description": "Change your preferred language in supported websites easily",
   "homepage_url": "https://github.com/almirjnr/language-browser-extension",
   "icons": {
