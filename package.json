@@ -6,6 +6,7 @@
   },
   "scripts": {
     "build": "tsc --build --clean && tsc && web-ext build --overwrite-dest && tsc --build --clean",
-    "dev": "tsc --build --clean && tsc && web-ext run --devtools --reload --start-url https://learn.microsoft.com && tsc --build --clean"
+    "clean": "tsc --build --clean",
+    "dev": "tsc --build --clean && tsc --watch & web-ext run --devtools --reload --start-url"
   }
 }

@@ -5,7 +5,10 @@
 
 # Development
 
-1. Run `npm run dev`
+1. Run `npm run dev -- START_URL`
+   - example values for START_URL:
+     - https://www.freecodecamp.org/learn
+     - https://learn.microsoft.com/en-us/training/
 
 # Installation
 
