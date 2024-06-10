@@ -1,3 +1,8 @@
+<div align="center">
+    <img height="250px" width="250px" src="./src/icons/icon.png" alt="logo">
+    <h2>Language Selector</h2>
+</div>
+
 # Build
 
 1. Run `npm i`
@@ -5,7 +10,10 @@
 
 # Development
 
-1. Run `npm run dev`
+1. Run `npm run dev -- START_URL`
+   - example values for START_URL:
+     - https://www.freecodecamp.org/learn
+     - https://learn.microsoft.com/en-us/training/
 
 # Installation
 

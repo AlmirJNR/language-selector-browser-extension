@@ -1,4 +1,7 @@
 web-ext-artifacts/*
+!web-ext-artifacts/.gitkeep
+*.js
+*.mjs
 
 .idea/**/workspace.xml
 .idea/**/tasks.xml

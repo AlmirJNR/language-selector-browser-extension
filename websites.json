@@ -1,0 +1,41 @@
+[
+  {
+    "id": "learn-microsoft",
+    "documentUrlPatterns": ["*://learn.microsoft.com/*"],
+    "replaceInPathAt": 0,
+    "languages": [
+      {
+        "name": "Português",
+        "path": "pt-br",
+        "locale": ["pt", "por"]
+      },
+      {
+        "name": "English",
+        "path": "en-us",
+        "locale": ["en", "eng"]
+      }
+    ]
+  },
+  {
+    "id": "free-code-camp",
+    "documentUrlPatterns": ["*://www.freecodecamp.org/*"],
+    "replaceInPathAt": 0,
+    "insertInPathAt": 0,
+    "languages": [
+      {
+        "name": "Português",
+        "path": "portuguese",
+        "locale": ["pt", "por"]
+      },
+      {
+        "name": "English",
+        "locale": ["en", "eng"]
+      },
+      {
+        "name": "Español",
+        "path": "espanol",
+        "locale": ["es", "spa"]
+      }
+    ]
+  }
+]
