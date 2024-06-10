@@ -1,15 +1,26 @@
 import {changeTabLanguage} from "../libs/urlHelper.js";
-import * as constants from "../libs/constants.js";
+import {getActiveTab} from "../libs/tabsHelper.js";
+import {getWebsiteByTabUrl} from "../libs/storageHelper.js";
+import {getContextMenuIdsByWebsiteId, getWebsiteIdAndLanguageIndex} from "../libs/contextMenusHelper.js";
 
-const buttons = document.getElementsByTagName("button");
-for (const button of buttons) {
-    button.addEventListener("click", async event => {
-        const tabs = await browser.tabs.query({active: true, currentWindow: true});
-        const contextMenuId = (event.target as HTMLButtonElement).id;
-        await changeTabLanguage(tabs[0], contextMenuId);
+const activeTab = await getActiveTab();
+const website = await getWebsiteByTabUrl(activeTab.url);
+const contextMenuIds = await getContextMenuIdsByWebsiteId(website.id);
+const buttonsContainer = document.getElementById("button-container") as HTMLDivElement;
+for (const contextMenuId of contextMenuIds) {
+    const [_, languageIndex] = getWebsiteIdAndLanguageIndex(contextMenuId);
+    const button = document.createElement("button");
+    button.id = contextMenuId;
+    button.innerText = website.languages[languageIndex].name;
 
-        for (const id of constants.CONTEXT_MENU_IDS) {
-            await browser.contextMenus.update(id, {checked: id === contextMenuId});
-        }
-    });
+    button.addEventListener("click", event => handleButtonClick(event, languageIndex));
+    buttonsContainer.appendChild(button);
+}
+
+async function handleButtonClick(event: MouseEvent, languageIndex: number) {
+    await changeTabLanguage(activeTab, website, languageIndex);
+    for (const contextMenuId of contextMenuIds) {
+        const eventTarget = event.target as HTMLButtonElement;
+        await browser.contextMenus.update(contextMenuId, {checked: eventTarget.id === contextMenuId});
+    }
 }

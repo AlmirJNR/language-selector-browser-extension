@@ -44,7 +44,6 @@ img {
     justify-content: center;
 }
 
-#button-container > :first-child {
+#button-container > button:not(:first-child) {
     margin-top: 8px;
-    margin-bottom: 8px;
 }

@@ -2,12 +2,14 @@ type Website = {
     id: string;
     documentUrlPatterns: string[];
     replaceInPathAt: number;
+    insertInPathAt?: number;
     languages: Language[];
 }
 
 type Language = {
     name: string;
-    path: string | undefined;
+    path?: string;
+    locale: string[];
 }
 
 export {

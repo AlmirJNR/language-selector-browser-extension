@@ -1,33 +1,19 @@
 import {changeTabLanguage} from "../libs/urlHelper.js";
-import * as constants from "../libs/constants.js";
+import {getWebsiteIdAndLanguageIndex, initContextMenus} from "../libs/contextMenusHelper.js";
+import {getWebsites} from "../libs/storageHelper.js";
 
-browser.runtime.onInstalled.addListener(async () => {
-    // browser.runtime.onStartup.addListener(() => {
-    // TODO: Add logic to re-fetch data from static json
-    // });
-
-    browser.contextMenus.create({
-        id: constants.ENGLISH_CONTEXT_MENU_ID,
-        title: "English",
-        contexts: ["all"],
-        documentUrlPatterns: [constants.LEARN_MICROSOFT_URL_PATTERN],
-        type: "radio"
-    });
-    browser.contextMenus.create({
-        id: constants.PORTUGUESE_CONTEXT_MENU_ID,
-        title: "Português",
-        contexts: ["all"],
-        documentUrlPatterns: [constants.LEARN_MICROSOFT_URL_PATTERN],
-        type: "radio"
-    });
-
-    if (constants.CONTEXT_MENU_IDS.includes(constants.NAVIGATOR_LANGUAGE))
-        await browser.contextMenus.update(constants.NAVIGATOR_LANGUAGE, {checked: true});
-});
+browser.runtime.onInstalled.addListener(initContextMenus);
+browser.runtime.onStartup.addListener(initContextMenus);
 
 browser.contextMenus.onClicked.addListener(async (info, tab) => {
     if (tab === undefined)
         throw new Error("Invalid tab");
 
-    await changeTabLanguage(tab, info.menuItemId);
+    const websites = await getWebsites();
+    const [websiteId, languageIndex] = getWebsiteIdAndLanguageIndex(info.menuItemId);
+    const website = websites.find(x => x.id === websiteId);
+    if (website === undefined)
+        throw new Error(`Unable to find website by id: ${websiteId}`);
+
+    await changeTabLanguage(tab, website, languageIndex);
 });

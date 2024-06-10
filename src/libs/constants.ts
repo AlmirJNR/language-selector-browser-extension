@@ -1,18 +1,12 @@
-const LEARN_MICROSOFT_URL_PATTERN = "*://learn.microsoft.com/*";
+const FETCH_DATA_URL = "https://raw.githubusercontent.com/AlmirJNR/language-selector-browser-extension/main/websites.json";
+const WEBSITES_STORAGE_KEY = "web-sites";
+const GLOBAL_STORAGE = browser.storage.local;
 
-const NAVIGATOR_LANGUAGE = navigator.language.toLowerCase();
-const ENGLISH_CONTEXT_MENU_ID = "en-us";
-const PORTUGUESE_CONTEXT_MENU_ID = "pt-br";
-
-const CONTEXT_MENU_IDS = [
-    ENGLISH_CONTEXT_MENU_ID,
-    PORTUGUESE_CONTEXT_MENU_ID
-];
+const NAVIGATOR_LANGUAGES = navigator.languages.map(x => x.toLowerCase());
 
 export {
-    LEARN_MICROSOFT_URL_PATTERN,
-    NAVIGATOR_LANGUAGE,
-    CONTEXT_MENU_IDS,
-    ENGLISH_CONTEXT_MENU_ID,
-    PORTUGUESE_CONTEXT_MENU_ID
+    FETCH_DATA_URL,
+    WEBSITES_STORAGE_KEY,
+    GLOBAL_STORAGE,
+    NAVIGATOR_LANGUAGES
 };
